@@ -1,0 +1,48 @@
+{% extends "navbar.html" %}  
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}{% endblock %} </title>
+</head>
+<body>
+  <h3>{{ username }}'s Post</h3>
+<div id="posts">
+    {% for post in posts %} 
+    <br>  
+             
+        <div class ="card border-primary">
+              
+            <div class="card-header d-flex justify-content-between align-items-center"> 
+                  
+               <a href="/posts/{{post.user.username}}">{{post.user.username}}</a> </div>  
+               
+               <div class="card-body">
+              <h5 class="card-title">{{ post.title}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted"> By: {{ post.author }}</h6>
+              <p class="card-text"> {{ post.content }}</p>
+              {% if user.id == post.created_by %}
+              <div>
+              <a href="" class="card-link">Edit</a>
+              <a href="/delete-post/{{post.id}}" class="card-link">Delete</a>
+            </div>
+            {% endif %}
+            </div>
+            <div class="card-footer text-muted"> <p> Date Posted: {{post.date_created}}</p></div>
+         </div>
+         
+        </div>
+    </div>
+
+
+    {% endfor %}
+</div>
+
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "navbar.html" %}  
+{% block content %}
+{% block title %}{% endblock %}
+
+<form action="{{url_for('blog.contact')}}" method = "POST">
+  <div class="form-group">
+    <h3>Reach Out By Filling In Your Details</h3>
+  </div>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      name="name"
+      class="form-control"
+      placeholder="Input Your Name "
+      required
+    /> 
+  </div> <br>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      name="email"
+      class="form-control"
+      placeholder="Input Your Email"
+    />
+  </div> <br>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      name="title"
+      class="form-control"
+      placeholder="Kindly put down your message"
+      required
+    />
+  </div> <br>
+  <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" placeholder="Leave a message here" id="message" name ="message"style="height: 100px"></textarea>
+
+  </div>
+  <br>
+  <div align="center" class="d-grid gap-2">
+    <button class="btn btn-secondary " type="submit">Send</button>
+  </div>
+</form>
+<br/>
+
+{% endblock %}
