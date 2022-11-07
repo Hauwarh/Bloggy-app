@@ -38,7 +38,10 @@ A Blog application for Alt school second semester examination
   
      `http://127.0.0.1:8080/`
     
-       
- 
+# License
+
+Distributed under the MIT [LICENSE](https://github.com/Hauwarh/Bloggy-app/blob/main/LICENSE). See LICENSE for more information.
+
+
  
  
